@@ -1,0 +1,21 @@
+name: CI pipeline
+
+on:
+    push:
+        branches: [ main ]
+    pull_request:
+        branches: [ main ]
+
+jobs:
+    hello-world:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Code checkout
+          run: actions/checkoout@v6
+            
+        - name: Hello world
+          run: echo "Hello world!"
+
+        - name: Show date
+          run: date
