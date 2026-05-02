@@ -7,15 +7,15 @@ on:
         branches: [ main ]
 
 jobs:
-    hello-world:
+    deploy:
         runs-on: ubuntu-latest
 
         steps:
         - name: Code checkout
           uses: actions/checkout@v6
             
-        - name: Hello world
-          run: echo "Hello world!"
-
-        - name: Show date
-          run: date
+        - name: Deploy page to GitHub Pages
+          uses: peaceiris/actions-gh-pages@v4
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./
