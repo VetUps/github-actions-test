@@ -1,10 +1,13 @@
-name: CI pipeline
+name: CD pipeline
 
 on:
     push:
         branches: [ main ]
     pull_request:
         branches: [ main ]
+
+permissions:
+    contents: write
 
 jobs:
     deploy:
